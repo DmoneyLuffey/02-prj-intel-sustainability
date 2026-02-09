@@ -156,7 +156,7 @@ header p {
 /* ===== TIMELINE SECTION ===== */
 
 /* Timeline container - holds all timeline items */
-section {
+.timeline-section {
   max-width: 1000px;
   margin: 0 auto;
   padding: var(--spacing-3xl) var(--spacing-md);
@@ -169,7 +169,7 @@ section {
 }
 
 /* Vertical line down the middle of timeline */
-section::before {
+.timeline-section::before {
   content: '';
   position: absolute;
   left: 50%;
@@ -182,7 +182,7 @@ section::before {
 }
 
 /* Each timeline item container - add animation */
-section > div {
+.timeline-section > div {
   display: flex;
   margin-bottom: var(--spacing-3xl);
   position: relative;
@@ -192,28 +192,28 @@ section > div {
 }
 
 /* Stagger animation - each item appears after the previous one */
-section > div:nth-child(1) { animation-delay: 0.1s; }
-section > div:nth-child(2) { animation-delay: 0.2s; }
-section > div:nth-child(3) { animation-delay: 0.3s; }
-section > div:nth-child(4) { animation-delay: 0.4s; }
-section > div:nth-child(5) { animation-delay: 0.5s; }
-section > div:nth-child(6) { animation-delay: 0.6s; }
-section > div:nth-child(7) { animation-delay: 0.7s; }
-section > div:nth-child(8) { animation-delay: 0.8s; }
-section > div:nth-child(9) { animation-delay: 0.9s; }
+.timeline-section > div:nth-child(1) { animation-delay: 0.1s; }
+.timeline-section > div:nth-child(2) { animation-delay: 0.2s; }
+.timeline-section > div:nth-child(3) { animation-delay: 0.3s; }
+.timeline-section > div:nth-child(4) { animation-delay: 0.4s; }
+.timeline-section > div:nth-child(5) { animation-delay: 0.5s; }
+.timeline-section > div:nth-child(6) { animation-delay: 0.6s; }
+.timeline-section > div:nth-child(7) { animation-delay: 0.7s; }
+.timeline-section > div:nth-child(8) { animation-delay: 0.8s; }
+.timeline-section > div:nth-child(9) { animation-delay: 0.9s; }
 
 /* Odd items (1st, 3rd, 5th...) - year on left, card on right */
-section > div:nth-child(odd) {
+.timeline-section > div:nth-child(odd) {
   flex-direction: row;
 }
 
 /* Even items (2nd, 4th, 6th...) - card on left, year on right */
-section > div:nth-child(even) {
+.timeline-section > div:nth-child(even) {
   flex-direction: row-reverse;
 }
 
 /* Blue dot on the timeline line - add subtle pulse animation on hover */
-section > div::before {
+.timeline-section > div::before {
   content: '';
   position: absolute;
   width: 16px;
@@ -231,12 +231,12 @@ section > div::before {
 }
 
 /* Dot animation on item hover */
-section > div:hover::before {
+.timeline-section > div:hover::before {
   animation: dotPulse 0.6s ease-in-out;
 }
 
 /* Year text - positioned on left or right */
-section h2 {
+.timeline-section h2 {
   font-size: var(--text-2xl);
   font-weight: var(--font-weight-bold);
   color: var(--intel-blue);
@@ -258,24 +258,24 @@ section h2 {
 }
 
 /* Year slides slightly on card hover */
-section > div:hover h2 {
+.timeline-section > div:hover h2 {
   transform: translateX(-8px);
 }
 
 /* Adjust year position for even items */
-section > div:nth-child(even) h2 {
+.timeline-section > div:nth-child(even) h2 {
   padding-right: 0;
   padding-left: var(--spacing-lg);
   justify-content: flex-start;
 }
 
 /* Even item year slides right on hover */
-section > div:nth-child(even):hover h2 {
+.timeline-section > div:nth-child(even):hover h2 {
   transform: translateX(8px);
 }
 
 /* Content card - clean white background with subtle styling - HIDDEN BY DEFAULT */
-section > div > div {
+.timeline-section > div > div {
   width: 40%;
   background: var(--white);
   border: 2px solid var(--border-light);
@@ -292,14 +292,14 @@ section > div > div {
 }
 
 /* Show card on dot hover - reveal with fade-in */
-section > div:hover > div {
+.timeline-section > div:hover > div {
   opacity: 1;
   pointer-events: auto;
   box-shadow: 0 12px 24px rgba(0, 113, 197, 0.15);
 }
 
 /* Card hover effect - lift up and enhance blue accent */
-section > div:hover > div {
+.timeline-section > div:hover > div {
   box-shadow: none;
   transform: translateY(-4px);
   border-color: transparent;
@@ -307,7 +307,7 @@ section > div:hover > div {
 }
 
 /* Card title - event name - revealed on hover */
-section h3 {
+.timeline-section h3 {
   font-size: var(--text-xl);
   font-weight: var(--font-weight-semibold);
   color: var(--intel-blue);
@@ -318,13 +318,13 @@ section h3 {
 }
 
 /* Reveal title on card visibility */
-section > div:hover h3 {
+.timeline-section > div:hover h3 {
   color: #0056a0;
   opacity: 1;
 }
 
 /* Card description - event details - revealed on hover */
-section > div > div p {
+.timeline-section > div > div p {
   font-size: var(--text-sm);
   font-weight: var(--font-weight-regular);
   color: var(--gray-medium);
@@ -334,7 +334,7 @@ section > div > div p {
 }
 
 /* Reveal description on card visibility */
-section > div:hover p {
+.timeline-section > div:hover p {
   color: var(--dark-text);
   opacity: 1;
 }
@@ -351,7 +351,7 @@ section > div:hover p {
 }
 
 /* Show image on card hover */
-section > div > div:hover .timeline-image {
+.timeline-section > div > div:hover .timeline-image {
   opacity: 1;
   display: block;
 }
@@ -374,27 +374,27 @@ body > p {
 
 @media (max-width: 1024px) {
   /* Timeline adjustments for tablet */
-  section {
+  .timeline-section {
     padding: var(--spacing-2xl) var(--spacing-md);
   }
 
-  section > div {
+  .timeline-section > div {
     margin-bottom: var(--spacing-2xl);
   }
 
   /* Reduce year width on tablet */
-  section h2 {
+  .timeline-section h2 {
     width: 35%;
     padding-right: var(--spacing-md);
     font-size: var(--text-xl);
   }
 
-  section > div:nth-child(even) h2 {
+  .timeline-section > div:nth-child(even) h2 {
     padding-left: var(--spacing-md);
   }
 
   /* Reduce card width on tablet */
-  section > div > div {
+  .timeline-section > div > div {
     width: 35%;
     padding: var(--spacing-md);
   }
@@ -422,30 +422,30 @@ body > p {
   }
 
   /* Timeline adjustments for mobile */
-  section {
+  .timeline-section {
     padding: var(--spacing-md);
   }
 
   /* Move vertical line to left side on mobile */
-  section::before {
+  .timeline-section::before {
     left: 25px;
   }
 
   /* Stack all items vertically on mobile */
-  section > div {
+  .timeline-section > div {
     flex-direction: column !important;
     align-items: flex-start; /* keep items aligned to the left */
     margin-left: 60px;
     margin-bottom: var(--spacing-2xl);
   }
 
-  section > div::before {
+  .timeline-section > div::before {
     left: 25px;
     top: 0;
   }
 
   /* Place the year text to the right of the dot (no negative offset) */
-  section h2 {
+  .timeline-section h2 {
     width: 100%;
     text-align: left !important;
     margin-left: 0;
@@ -457,8 +457,8 @@ body > p {
   }
 
   /* Keep hover shifts off for uniform alignment */
-  section > div:hover h2,
-  section > div:nth-child(even):hover h2 {
+  .timeline-section > div:hover h2,
+  .timeline-section > div:nth-child(even):hover h2 {
     transform: none;
   }
 
@@ -466,16 +466,16 @@ body > p {
   /* (Delete the old "Full width year and card on mobile" h2 block) */
 
   /* Even item year slides right on hover */
-  section > div:nth-child(even):hover h2 {
+  .timeline-section > div:nth-child(even):hover h2 {
     transform: translateX(8px);
   }
 
   /* Adjust year slide distance on mobile */
-  section > div:hover h2 {
+  .timeline-section > div:hover h2 {
     transform: translateX(-4px);
   }
 
-  section > div:nth-child(even):hover h2 {
+  .timeline-section > div:nth-child(even):hover h2 {
     transform: translateX(4px);
   }
 }
@@ -490,32 +490,32 @@ body > p {
     font-size: var(--text-sm);
   }
 
-  section {
+  .timeline-section {
     padding: var(--spacing-sm);
   }
 
-  section > div {
+  .timeline-section > div {
     margin-left: 50px;
     margin-bottom: var(--spacing-lg);
   }
 
-  section > div::before {
+  .timeline-section > div::before {
     left: 20px;
   }
 
-  section::before {
+  .timeline-section::before {
     left: 20px;
   }
 
-  section h2 {
+  .timeline-section h2 {
     font-size: var(--text-lg);
   }
 
-  section > div > div {
+  .timeline-section > div > div {
     padding: var(--spacing-sm);
   }
 
-  section h3 {
+  .timeline-section h3 {
     font-size: var(--text-base);
   }
 
@@ -523,4 +523,43 @@ body > p {
     font-size: var(--text-xs);
     padding: var(--spacing-md) var(--spacing-sm);
   }
+}
+
+/* ===== THREE-COLUMN SECTION ===== */
+.three-column-section {
+  background-color: var(--white);
+  padding: var(--spacing-3xl) var(--spacing-md);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: var(--spacing-3xl);
+  margin-bottom: var(--spacing-3xl);
+}
+
+.three-column-section .card {
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.three-column-section .card-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--intel-blue);
+}
+
+.three-column-section .card-text {
+  font-size: var(--text-base);
+  color: var(--gray-medium);
+}
+
+.three-column-section .btn {
+  background-color: var(--intel-blue);
+  color: var(--white);
+  font-weight: var(--font-weight-medium);
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.three-column-section .btn:hover {
+  background-color: #0056a0;
 }
